@@ -1,3 +1,6 @@
+## See https://github.com/parrotmac/openapi-typescript-codegen/commit/89edbc5f8ddc9e057cf14c25bf25c9efe7927e61 for the _raison d'etre_ of this fork.
+
+
 # OpenAPI Typescript Codegen
 
 [![NPM][npm-image]][npm-url]
