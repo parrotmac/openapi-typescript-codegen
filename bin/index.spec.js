@@ -23,6 +23,7 @@ describe('bin', () => {
             '--client',
             'fetch',
             '--useOptions',
+            '--inlineRequestOverrides',
             '--useUnionTypes',
             '--exportCore',
             'true',

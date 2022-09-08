@@ -30,6 +30,9 @@ import type { BaseHttpRequest } from '../core/BaseHttpRequest';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
 {{/if}}
+{{#if @root.inlineRequestOverrides~}}
+import type { ApiRequestOptions } from '../core/ApiRequestOptions';
+{{/if}}
 
 {{#equals @root.httpClient 'angular'}}
 @Injectable()
@@ -142,6 +145,9 @@ export class {{{name}}}{{{@root.postfix}}} {
 				{{{code}}}: `{{{escapeDescription description}}}`,
 				{{/each}}
 			},
+			{{/if}}
+			{{#if @root.inlineRequestOverrides}}
+			..._requestOverrides,
 			{{/if}}
 		});
 	}

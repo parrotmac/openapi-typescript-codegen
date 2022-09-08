@@ -1,12 +1,12 @@
 {
-    "name": "openapi-typescript-codegen",
-    "version": "0.23.0",
+    "name": "@parrotmac/openapi-typescript-codegen",
+    "version": "0.23.0-hack5",
     "description": "Library that generates Typescript clients based on the OpenAPI specification.",
     "author": "Ferdi Koomen",
-    "homepage": "https://github.com/ferdikoomen/openapi-typescript-codegen",
+    "homepage": "https://github.com/parrotmac/openapi-typescript-codegen",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/ferdikoomen/openapi-typescript-codegen.git"
+        "url": "git+https://github.com/parrotmac/openapi-typescript-codegen.git"
     },
     "bugs": {
         "url": "https://github.com/ferdikoomen/openapi-typescript-codegen/issues"
@@ -31,10 +31,13 @@
             "email": "info@madebyferdi.com"
         }
     ],
+    "publishConfig": {
+        "registry":"https://registry.npmjs.org"
+    },
     "main": "dist/index.js",
     "types": "types/index.d.ts",
     "bin": {
-        "openapi": "bin/index.js"
+        "custom-openapi": "bin/index.js"
     },
     "files": [
         "bin/index.js",

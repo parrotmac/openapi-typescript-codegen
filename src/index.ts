@@ -18,6 +18,7 @@ export type Options = {
     httpClient?: HttpClient;
     clientName?: string;
     useOptions?: boolean;
+    inlineRequestOverrides?: boolean;
     useUnionTypes?: boolean;
     exportCore?: boolean;
     exportServices?: boolean;
@@ -39,6 +40,7 @@ export type Options = {
  * @param clientName Custom client class name
  * @param useOptions Use options or arguments functions
  * @param useUnionTypes Use union types instead of enums
+ * @param inlineRequestOverrides Provide a place within service methods to define arbitrary request modifications
  * @param exportCore Generate core client classes
  * @param exportServices Generate services
  * @param exportModels Generate models
@@ -54,6 +56,7 @@ export const generate = async ({
     httpClient = HttpClient.FETCH,
     clientName,
     useOptions = false,
+    inlineRequestOverrides = false,
     useUnionTypes = false,
     exportCore = true,
     exportServices = true,
@@ -83,6 +86,7 @@ export const generate = async ({
                 output,
                 httpClient,
                 useOptions,
+                inlineRequestOverrides,
                 useUnionTypes,
                 exportCore,
                 exportServices,
@@ -106,6 +110,7 @@ export const generate = async ({
                 output,
                 httpClient,
                 useOptions,
+                inlineRequestOverrides,
                 useUnionTypes,
                 exportCore,
                 exportServices,

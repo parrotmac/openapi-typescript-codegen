@@ -39,7 +39,7 @@ describe('writeClientServices', () => {
             },
         };
 
-        await writeClientServices(services, templates, '/', HttpClient.FETCH, false, false, Indent.SPACE_4, 'Service');
+        await writeClientServices(services, templates, '/', HttpClient.FETCH, false, false, false, Indent.SPACE_4, 'Service');
 
         expect(writeFile).toBeCalledWith('/UserService.ts', `service${EOL}`);
     });

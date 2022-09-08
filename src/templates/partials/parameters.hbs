@@ -4,6 +4,9 @@
 {{#each parameters}}
 {{{name}}}{{#if default}} = {{{default}}}{{/if}},
 {{/each}}
+{{#if @root.inlineRequestOverrides~}}
+_requestOverrides,
+{{/if}}
 }: {
 {{#each parameters}}
 {{#ifdef description deprecated}}
@@ -18,11 +21,19 @@
 {{/ifdef}}
 {{{name}}}{{>isRequired}}: {{>type}},
 {{/each}}
+    _requestOverrides?: Partial<ApiRequestOptions>,
 }
 {{~else}}
 
 {{#each parameters}}
 {{{name}}}{{>isRequired}}: {{>type}}{{#if default}} = {{{default}}}{{/if}},
 {{/each}}
+{{/if}}
+{{~else}}
+{{#if @root.inlineRequestOverrides~}}{
+    _requestOverrides,
+}: {
+    _requestOverrides?: Partial<ApiRequestOptions>,
+}
 {{/if}}
 {{/if}}

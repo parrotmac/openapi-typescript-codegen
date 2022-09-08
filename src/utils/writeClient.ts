@@ -38,6 +38,7 @@ export const writeClient = async (
     output: string,
     httpClient: HttpClient,
     useOptions: boolean,
+    inlineRequestOverrides: boolean,
     useUnionTypes: boolean,
     exportCore: boolean,
     exportServices: boolean,
@@ -74,6 +75,7 @@ export const writeClient = async (
             httpClient,
             useUnionTypes,
             useOptions,
+            inlineRequestOverrides,
             indent,
             postfix,
             clientName

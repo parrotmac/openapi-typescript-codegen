@@ -16,6 +16,7 @@ const params = program
     .option('--name <value>', 'Custom client class name')
     .option('--useOptions', 'Use options instead of arguments')
     .option('--useUnionTypes', 'Use union types instead of enums')
+    .option('--inlineRequestOverrides', 'Permit specifying request options on a per-invocation basis')
     .option('--exportCore <value>', 'Write core files to disk', true)
     .option('--exportServices <value>', 'Write services to disk', true)
     .option('--exportModels <value>', 'Write models to disk', true)
@@ -35,6 +36,7 @@ if (OpenAPI) {
         httpClient: params.client,
         clientName: params.name,
         useOptions: params.useOptions,
+        inlineRequestOverrides: params.inlineRequestOverrides,
         useUnionTypes: params.useUnionTypes,
         exportCore: JSON.parse(params.exportCore) === true,
         exportServices: JSON.parse(params.exportServices) === true,
